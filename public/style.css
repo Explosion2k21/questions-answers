@@ -1,0 +1,23 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "adobe-clean", sans-serif;
+}
+.question{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    justify-content: space-between;
+}
+.questionList{
+    width: 80%;
+    margin: 0 auto;
+}
+.questionList button{
+    margin: 20px;
+    padding: 20px 10px;
+    
+}
