@@ -11,7 +11,7 @@ app.use(express.static(path.join(__dirname, '../public')));
 require('dotenv').config();
 // this is a get request to fetch the questions data of the product selected
 app.get("/questions", (req, res) =>{
-  axios.get("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions?product_id=11005&page=1&count=5", {
+  axios.get("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions?product_id=11002&page=1&count=5", {
       headers: {
         Authorization: process.env.TOKEN,
       }
@@ -25,6 +25,17 @@ app.get("/questions", (req, res) =>{
 app.put("/update/:id", (req, res) => {
   console.log('tttt', req.params)
   axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${req.params.id}/helpful`,{},{
+    headers: {
+      Authorization: process.env.TOKEN,
+    }
+  }).then(({result})=>{
+    res.send(result)
+  })
+})
+
+app.put("/updateAnswer/:id", (req, res) => {
+  console.log('tttt', req.params)
+  axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/answers/${req.params.id}/helpful`,{},{
     headers: {
       Authorization: process.env.TOKEN,
     }
