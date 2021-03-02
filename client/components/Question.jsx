@@ -42,8 +42,8 @@ class Question extends React.Component {
         return (<div>
         <div className='question'>
             <h2>Q: {this.props.questions.question_body}</h2>
-            {this.state.bolean ? <div><span className="span"> Helpful? <a style={{marginLeft:"10px"}} href="#" className="help" onClick={() => { this.onSubmit(this.props.questions.question_id) }}>Yes({this.props.questions.question_helpfulness})</a></span></div> :
-                <div><span className="span"> Helpful? <a style={{marginLeft:"10px"}} href="#" className="help" >Yes({this.props.questions.question_helpfulness})</a></span></div>}
+            {this.state.bolean ? <div><span className="span"> Helpful? <a style={{marginLeft:"10px", marginRight:"50px"}} href="#" className="help" onClick={() => { this.onSubmit(this.props.questions.question_id) }}>Yes({this.props.questions.question_helpfulness})</a></span></div> :
+                <div><span className="span"> Helpful? <a style={{marginLeft:"10px",marginRight:"50px"}} href="#" className="help" >Yes({this.props.questions.question_helpfulness})</a></span></div>}
             
         </div>
         <div className='answers'>
