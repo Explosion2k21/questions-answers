@@ -42,8 +42,8 @@ class Question extends React.Component {
         return (<div>
         <div className='question'>
             <h2>Q: {this.props.questions.question_body}</h2>
-            {this.state.bolean ? <div><span > Helpful? <a className="h" onClick={() => { this.onSubmit(this.props.questions.question_id) }}>Yes({this.props.questions.question_helpfulness})</a></span></div> :
-                <div><span > Helpful? <a className="haa" >Yes({this.props.questions.question_helpfulness})</a></span></div>}
+            {this.state.bolean ? <div><span className="span"> Helpful? <a style={{marginLeft:"10px"}} href="#" className="help" onClick={() => { this.onSubmit(this.props.questions.question_id) }}>Yes({this.props.questions.question_helpfulness})</a></span></div> :
+                <div><span className="span"> Helpful? <a style={{marginLeft:"10px"}} href="#" className="help" >Yes({this.props.questions.question_helpfulness})</a></span></div>}
             
         </div>
         <div className='answers'>
@@ -54,7 +54,7 @@ class Question extends React.Component {
          })}
         </div>
         <div>
-            <a className="anchor" onClick={() => { this.loadMoreAnswers() }}> LOAD MORE ANSWERS</a>
+           {!this.state.load&&answers.length<3?null :<a style={{marginLeft:"20px"}} className="anchor" onClick={() => { this.loadMoreAnswers() }}> LOAD MORE ANSWERS</a>}
             </div>
         </div>)
     }
