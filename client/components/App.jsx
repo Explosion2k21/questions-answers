@@ -1,7 +1,6 @@
 
 import React from 'react';
 import QuestionsList from './QuestionsList.jsx';
-import Question from './Question.jsx';
 import axios from 'axios';
 
 class App extends React.Component {
@@ -12,7 +11,8 @@ class App extends React.Component {
       loadMore: false
     }
     this.fetchQuestions = this.fetchQuestions.bind(this)
-    this.loadMoreQuestions= this.loadMoreQuestions.bind(this)
+    this.loadMoreQuestions = this.loadMoreQuestions.bind(this)
+    
   }
   fetchQuestions() {
     axios.get("/questions").then((result) => {
@@ -22,6 +22,8 @@ class App extends React.Component {
       })
     })
   }
+  
+  
   componentDidMount() {
     this.fetchQuestions()
   }
@@ -30,14 +32,15 @@ class App extends React.Component {
       loadMore: true
     })
   }
-  
+
+
   render() {
     return (
       <div>
-       {!this.state.loadMore? <QuestionsList questions={this.state.questions.slice(0,4) } handleClick={this.loadMoreQuestions} />: <QuestionsList questions={this.state.questions} handleClick={this.loadMoreQuestions}/>}
-       
+        {!this.state.loadMore ? <QuestionsList questions={this.state.questions.slice(0, 4)} handleClick={this.loadMoreQuestions} fetch={this.fetchQuestions} /> : <QuestionsList questions={this.state.questions} handleClick={this.loadMoreQuestions} fetch={this.fetchQuestions} />}
+
       </div>
-      
+
     )
   }
 }
