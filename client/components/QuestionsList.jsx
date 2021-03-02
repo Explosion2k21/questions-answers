@@ -9,12 +9,17 @@ class QuestionsList extends React.Component {
 
     render() {
         return (
+            <div>
             <div className='questionList'>
                 {this.props.questions.map((question) => {
                     return < Question questions={question} key={question.question_id} fetch={this.props.fetch} />
                 })}
-                <button onClick={() => { this.props.handleClick() }}> MORE ANSWERED QUESTIONS</button>
-                <button>ADD A QUESTION +</button>
+                
+            </div>
+            <div>
+                <button className="buttons" onClick={() => { this.props.handleClick() }}> MORE ANSWERED QUESTIONS</button>
+                <button className="buttons">ADD A QUESTION +</button>
+                </div>
             </div>
         )
     }
