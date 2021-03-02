@@ -11,13 +11,27 @@ body{
     align-items: center;
     margin: 20px;
     justify-content: space-between;
+  
+}
+.question p{
+    display: block;
+    justify-content: flex-end;
+    align-items: center;
 }
 .questionList{
     width: 80%;
     margin: 0 auto;
+    overflow-y: scroll;
+    max-height: 280px;
 }
 .questionList button{
     margin: 20px;
     padding: 20px 10px;
     
+}
+.h{
+    cursor: pointer;
+}
+.haa{
+    cursor: pointer;
 }

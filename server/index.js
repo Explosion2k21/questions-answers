@@ -15,12 +15,34 @@ app.get("/questions", (req, res) =>{
         Authorization: process.env.TOKEN,
       }
     }).then((result) => {
-      console.log('aaa', result.data)
        res.send(result.data)
     }).catch((err) => {
       console.log(err)
     })
 })
+app.put("/update/:id", (req, res) => {
+  console.log('tttt', req.params)
+  axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${req.params.id}/helpful`,{},{
+    headers: {
+      Authorization: process.env.TOKEN,
+    }
+  }).then(({result})=>{
+    res.send(result)
+  })
+})
+// app.get("/answers", (req, res) => {
+//   console.log('ali', req.params)
+//   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/47568/answers`, {
+//       headers: {
+//         Authorization: process.env.TOKEN,
+//       }
+//     }).then((result) => {
+//       //  res.send(result)
+//       console.log(result)
+//     }).catch((err) => {
+//       console.log(err)
+//     })
+// })
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });
