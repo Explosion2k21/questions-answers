@@ -9,6 +9,7 @@ const port = process.env.PORT || 3001;
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, '../public')));
 require('dotenv').config();
+// this is a get request to fetch the questions data of the product selected
 app.get("/questions", (req, res) =>{
   axios.get("https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions?product_id=11005&page=1&count=5", {
       headers: {
@@ -20,6 +21,7 @@ app.get("/questions", (req, res) =>{
       console.log(err)
     })
 })
+// this is a put request to update the count of helpfulness for each question
 app.put("/update/:id", (req, res) => {
   console.log('tttt', req.params)
   axios.put(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${req.params.id}/helpful`,{},{
@@ -30,19 +32,7 @@ app.put("/update/:id", (req, res) => {
     res.send(result)
   })
 })
-// app.get("/answers", (req, res) => {
-//   console.log('ali', req.params)
-//   axios.get(`https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/47568/answers`, {
-//       headers: {
-//         Authorization: process.env.TOKEN,
-//       }
-//     }).then((result) => {
-//       //  res.send(result)
-//       console.log(result)
-//     }).catch((err) => {
-//       console.log(err)
-//     })
-// })
+
 app.listen(port, () => {
   console.log(`server running at: http://localhost:${port}`);
 });

@@ -1,5 +1,5 @@
 import React from 'react';
-import axios from 'axios';
+import moment from 'moment';
 
 class AnswersList extends React.Component {
     constructor(props) {
@@ -7,12 +7,21 @@ class AnswersList extends React.Component {
         this.state = {
         }
     }
+    
   
      
     render() {
         return (
-            <div>
-             {/* <h2>A: {this.props.answers.body}</h2> */}
+            <div className="answers-style">
+                <div>
+                <h4>A: {this.props.answers.body}</h4>
+                </div>
+           <div className="answers-details">
+           <p>by {this.props.answers.answerer_name},</p>
+             <p>{moment(this.props.answers.date).format('ll')} | </p>
+             <span > Helpful? <a>Yes({this.props.answers.helpfulness})</a> </span>
+           </div>
+           
             </div>
         )
     }

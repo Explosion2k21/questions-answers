@@ -13,25 +13,41 @@ body{
     justify-content: space-between;
   
 }
-.question p{
-    display: block;
-    justify-content: flex-end;
-    align-items: center;
-}
+
 .questionList{
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     overflow-y: scroll;
-    max-height: 280px;
+    overflow-x: hidden;
+    max-height: 400px;
+    align-items: center;
 }
-.questionList button{
-    margin: 20px;
-    padding: 20px 10px;
-    
-}
+
 .h{
     cursor: pointer;
 }
 .haa{
     cursor: pointer;
 }
+.anchor{
+    cursor: pointer;
+   font-size: 1.5em;
+}
+
+.answers-details{
+   
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    align-items: center;
+}
+
+.buttons{
+    margin: 20px;
+    padding: 20px 10px;
+}
+.header{
+    display: flex;
+    justify-content: center;
+}
+

@@ -7,47 +7,54 @@ class Question extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            boli: true
+            boli: true,
+            load: false
         }
         this.onSubmit = this.onSubmit.bind(this)
-        // this.fetchAnswers= this.fetchAnswers.bind(this)
+        this.loadMoreAnswers= this.loadMoreAnswers.bind(this)
 
     }
-    // fetchAnswers(question_id) {
-    //     console.log('aaaa', question_id)
-    //     axios.get(`/answers/${question_id}`).then((result) => {
-    //       console.log('aaaa', result)
-    //       // this.setState({
-    //       //   answers: result.data.results
-    //       // })
-    //     })
-    //   }
-    //   componentDidMount() {
-    //     this.fetchAnswers()
-    //   }
+    // this function to update the count of helpfulness for each question
     onSubmit(question_id) {
         console.log(question_id)
         axios.put(`/update/${question_id}`).then((res) => {
             console.log('res', res)
             this.setState({ boli: false })
         })
+        // calling the fetch function to update dinamically without refreshing the page
         this.props.fetch()
+    }
+    // this function is to load the remaining answers
+    loadMoreAnswers(){
+        this.setState({
+            load: true
+        })
     }
 
     render() {
-        // let answers=[]
-        // for(let key in this.props.questions.answers){
-        //     answers.push(this.props.questions.answers[key])
-        // }
-        return (
+        // pushing the answers in an array to be able to map over them
+        let answers=[]
+        for(let key in this.props.questions.answers){
+            answers.push(this.props.questions.answers[key])
+        }
+        const loadMore= this.state.load
+        return (<div>
         <div className='question'>
             <h2>Q: {this.props.questions.question_body}</h2>
             {this.state.boli ? <div><span > Helpful? <a className="h" onClick={() => { this.onSubmit(this.props.questions.question_id) }}>Yes({this.props.questions.question_helpfulness})</a></span></div> :
                 <div><span > Helpful? <a className="haa" >Yes({this.props.questions.question_helpfulness})</a></span></div>}
-                 {/* {answers.map((answer, index)=>{
-                    return <AnswersList answers={answer} key={index}/>
-                 })} */}
             
+        </div>
+        <div className='answers'>
+            {!loadMore? answers.slice(0,2).map((answer)=>{
+           return <AnswersList  answers={answer} key={answer.id}/>
+        }):  answers.map((answer)=>{
+            return <AnswersList  answers={answer} key={answer.id}/>
+         })}
+        </div>
+        <div>
+            <a className="anchor" onClick={() => { this.loadMoreAnswers() }}> LOAD MORE ANSWERS</a>
+            </div>
         </div>)
     }
 }
