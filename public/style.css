@@ -32,25 +32,27 @@ body{
 .anchor{
     cursor: pointer;
    font-size: 1em;
+   color: black;
 }
 
 .answers-details{
    
     display: flex;
     align-items: center;
+    justify-content: space;
     margin: 20px;
-    align-items: center;
 }
 /* fix the style of the buttons that have className buttons */
 .buttons{
     margin: 10px;
-    padding: 20px 10px;
-    font-size: 1em;
+    padding: 20px 5px;
 }
 /* fix the style of the header as h1 that has the className header */
 .header{
     display: flex;
-    justify-content: center;
+    color: gray;
+    margin-left: 90px;
+    margin-top: 20px;
 }
 /* fix the style of an anchor tag that has the className help*/
 .help{
@@ -65,11 +67,7 @@ body{
 .span{
     color: gray;
 }
-.answers-details{
-    display: flex;
-    flex-direction: row;
-    height: 20%;
-}
+
 .images{
     display: flex;
 }

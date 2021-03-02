@@ -3,9 +3,13 @@ import Question from './Question.jsx';
 class QuestionsList extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            show:false
+        }
     }
-
+showButton(){
+    this.setState({show:true})
+}
 
     render() {
         return (
@@ -18,7 +22,7 @@ class QuestionsList extends React.Component {
             </div>
             <div>
                 <button style={{marginLeft:"95px"}} className="buttons" onClick={() => { this.props.handleClick() }}> MORE ANSWERED QUESTIONS</button>
-                <button className="buttons">ADD A QUESTION +</button>
+               <button className="buttons" >ADD A QUESTION +</button>
                 </div>
             </div>
         )
