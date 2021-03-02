@@ -31,7 +31,7 @@ body{
 }
 .anchor{
     cursor: pointer;
-   font-size: 1.5em;
+   font-size: 1em;
 }
 
 .answers-details{
@@ -41,16 +41,41 @@ body{
     margin: 20px;
     align-items: center;
 }
-
+/* fix the style of the buttons that have className buttons */
 .buttons{
-    margin: 20px;
+    margin: 10px;
     padding: 20px 10px;
+    font-size: 1em;
 }
+/* fix the style of the header as h1 that has the className header */
 .header{
     display: flex;
     justify-content: center;
 }
+/* fix the style of an anchor tag that has the className help*/
 .help{
     cursor: pointer;
+    color:gray;
+    
 }
-
+.paragraph{
+    color: gray;
+    
+}
+.span{
+    color: gray;
+}
+.answers-details{
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+}
+.images{
+    display: flex;
+}
+.image{
+    display: flex;
+    height: 150px;
+    width: 250px;
+    justify-content:center;
+}
