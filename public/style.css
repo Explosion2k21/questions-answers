@@ -3,9 +3,11 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* fix the style of the body */
 body{
     font-family: "adobe-clean", sans-serif;
 }
+/* fix the style of each question */
 .question{
     display: flex;
     align-items: center;
@@ -13,7 +15,7 @@ body{
     justify-content: space-between;
   
 }
-
+/* fix the style of questions list */
 .questionList{
     width: 90%;
     margin: 0 auto;
@@ -29,12 +31,13 @@ body{
 .haa{
     cursor: pointer;
 }
+/* fix the style of each anchor tag */
 .anchor{
     cursor: pointer;
    font-size: 1em;
    color: black;
 }
-
+/* fix the style of the answers */
 .answers-details{
    
     display: flex;
@@ -60,6 +63,7 @@ body{
     color:gray;
     
 }
+/* fix the style of a paragraph that have the className paragraph*/
 .paragraph{
     color: gray;
     
@@ -67,10 +71,11 @@ body{
 .span{
     color: gray;
 }
-
+/* fix the style of all images */
 .images{
     display: flex;
 }
+/* fix the style of one image */
 .image{
     display: flex;
     height: 150px;

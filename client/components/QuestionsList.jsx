@@ -1,5 +1,6 @@
 import React from 'react';
 import Question from './Question.jsx';
+import AddQuestion from './AddQuestion.jsx';
 class QuestionsList extends React.Component {
     constructor(props) {
         super(props)
@@ -20,10 +21,11 @@ showButton(){
                 })}
                 
             </div>
-            <div>
+            <div style={{display: 'flex'}}>
                 <button style={{marginLeft:"95px"}} className="buttons" onClick={() => { this.props.handleClick() }}> MORE ANSWERED QUESTIONS</button>
-               <button className="buttons" >ADD A QUESTION +</button>
+               <AddQuestion />
                 </div>
+               
             </div>
         )
     }
