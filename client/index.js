@@ -1,5 +1,5 @@
-import App from './components/App.jsx';
+import App from "./components/App.jsx";
+import ReactDOM from "react-dom";
+import React from "react";
 
-window.NameOfTheService = App;
-
-
+ReactDOM.render(<App />, document.getElementById("service1"));

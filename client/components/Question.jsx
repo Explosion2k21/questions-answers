@@ -17,7 +17,7 @@ class Question extends React.Component {
     // this function to update the count of helpfulness for each question
     onSubmit(question_id) {
         console.log(question_id)
-        axios.put(`/update/${question_id}`).then((res) => {
+        axios.put(`http://localhost:3001/questions/update/${question_id}`).then((res) => {
             console.log('res', res)
             this.setState({ bolean: false })
         })
