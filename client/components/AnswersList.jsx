@@ -13,7 +13,7 @@ class AnswersList extends React.Component {
     // this function to update the count of helpfulness for each answer
     onSubmit(id) {
         console.log(id)
-        axios.put(`http://localhost:3001/questions/updateAnswer/${id}`).then((res) => {
+        axios.put(`http://161.35.216.50:3001/questions/updateAnswer/${id}`).then((res) => {
             console.log('res', res)
             this.setState({ bolean: false })
         })
