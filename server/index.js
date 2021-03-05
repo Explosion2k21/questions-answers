@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const path = require("path");
 const axios = require("axios");
 const TOKEN = process.env.TOKEN;
-
+require("dotenv").config();
 
 const app = express();
 var cors = require("cors");
@@ -13,7 +13,7 @@ app.use(cors());
 const port = process.env.PORT || 3001;
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));
-require("dotenv").config();
+
 // this is a get request to fetch the questions data of the product selected
 app.get("/questions", (req, res) => {
   axios
@@ -35,8 +35,8 @@ app.get("/questions", (req, res) => {
 // this is a put request to update the count of helpfulness for each question
 app.put("/questions/update/:id", (req, res) => {
   console.log("tttt", req.params);
-  axios
-    .put(
+  axiosONS &
+    ANSWERS.put(
       `https://app-hrsei-api.herokuapp.com/api/fec2/hrnyc/qa/questions/${req.params.id}/helpful`,
       {},
       {
@@ -44,8 +44,7 @@ app.put("/questions/update/:id", (req, res) => {
           Authorization: TOKEN,
         },
       }
-    )
-    .then(({ result }) => {
+    ).then(({ result }) => {
       res.send(result);
     });
 });
@@ -69,5 +68,5 @@ app.put("/questions/updateAnswer/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server running at: http://localhost:${port}`);
+  console.log(`server running at: http://${process.env.DEV_HOST}:${port}`);
 });
