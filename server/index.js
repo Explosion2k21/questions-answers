@@ -2,13 +2,14 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const axios = require("axios");
-const TOKEN = "3a09d90aa32dbe7c0c52acc2d435bfa2635756a1";
+const TOKEN = process.env.TOKEN;
 
 
 const app = express();
 var cors = require("cors");
 
 app.use(cors());
+
 const port = process.env.PORT || 3001;
 app.use(morgan("dev"));
 app.use(express.static(path.join(__dirname, "../public")));

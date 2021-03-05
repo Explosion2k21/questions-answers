@@ -14,7 +14,7 @@ class App extends React.Component {
   }
   //this is a function that fetches questions data using axios
   fetchQuestions() {
-    axios.get("http://161.35.216.50:3001/questions").then((result) => {
+    axios.get("http://164.90.161.236:3001/questions").then((result) => {
       console.log(result.data.results);
       this.setState({
         questions: result.data.results,
