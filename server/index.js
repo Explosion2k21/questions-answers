@@ -2,7 +2,7 @@ const express = require("express");
 const morgan = require("morgan");
 const path = require("path");
 const axios = require("axios");
-const TOKEN = process.env.TOKEN || "d730a5a7bf37cbef867777e0701d7f4d7171d2d3";
+const TOKEN = process.env.TOKEN || "22c9c42b980e7d2e44e8bc90b7852af8d96b1cad";
 require("dotenv").config();
 
 const app = express();
@@ -68,5 +68,5 @@ app.put("/questions/updateAnswer/:id", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`server running at: http://${process.env.DEV_HOST}:${port}`);
+  console.log(`server running at: http://localhost:${port}`);
 });
