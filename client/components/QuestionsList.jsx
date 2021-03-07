@@ -4,13 +4,8 @@ import AddQuestion from './AddQuestion.jsx';
 class QuestionsList extends React.Component {
     constructor(props) {
         super(props)
-        this.state = {
-            show:false
-        }
+        this.state = {}
     }
-showButton(){
-    this.setState({show:true})
-}
 
     render() {
         return (
@@ -23,7 +18,7 @@ showButton(){
             </div>
             <div style={{display: 'flex'}}>
                 <button style={{marginLeft:"95px"}} className="buttons" onClick={() => { this.props.handleClick() }}> MORE ANSWERED QUESTIONS</button>
-               <AddQuestion />
+               <AddQuestion product_id={this.props.product_id} fetch={this.props.fetch}/>
                 </div>
                
             </div>

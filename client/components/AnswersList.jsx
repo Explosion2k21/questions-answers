@@ -26,8 +26,8 @@ class AnswersList extends React.Component {
     render() {
         return (
             <div className="answers-style">
-                <div style={{marginLeft:"20px"}}>
-                <p>A: {this.props.answers.body}</p>
+                <div className="answers-p" style={{marginLeft:"20px"}}>
+                <p >A: {this.props.answers.body}</p>
                 </div>
                 <div className="images">
                     {this.props.answers.photos.map((elem, i)=>{

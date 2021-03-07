@@ -24,13 +24,6 @@ body{
     max-height: 400px;
     align-items: center;
 }
-
-.h{
-    cursor: pointer;
-}
-.haa{
-    cursor: pointer;
-}
 /* fix the style of each anchor tag */
 .anchor{
     cursor: pointer;
@@ -49,7 +42,10 @@ body{
 .buttons{
     margin: 10px;
     padding: 20px 5px;
+    display: inline-block;
+    cursor: pointer;
 }
+
 /* fix the style of the header as h1 that has the className header */
 .header{
     display: flex;
@@ -82,3 +78,8 @@ body{
     width: 250px;
     justify-content:center;
 }
+.form-control{
+    display: flex;
+   
+}
+

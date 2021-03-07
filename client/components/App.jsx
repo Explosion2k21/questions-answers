@@ -8,6 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       questions: [],
+      product_id:"",
       loadMore: false
     }
     this.fetchQuestions = this.fetchQuestions.bind(this)
@@ -17,9 +18,10 @@ class App extends React.Component {
   //this is a function that fetches questions data using axios
   fetchQuestions() {
     axios.get("/questions").then((result) => {
-      console.log(result.data.results)
+      console.log(result.data)
       this.setState({
-        questions: result.data.results
+        questions: result.data.results,
+        product_id: result.data.product_id
       })
     })
   }
@@ -40,7 +42,7 @@ class App extends React.Component {
     return (
       <div>
         <h1 className='header'>QUESTIONS & ANSWERS</h1>
-        {!this.state.loadMore ? <QuestionsList questions={this.state.questions.slice(0, 4)} handleClick={this.loadMoreQuestions} fetch={this.fetchQuestions} /> : <QuestionsList questions={this.state.questions} handleClick={this.loadMoreQuestions} fetch={this.fetchQuestions} />}
+        {!this.state.loadMore ? <QuestionsList product_id={this.state.product_id} questions={this.state.questions.slice(0, 4)} handleClick={this.loadMoreQuestions} fetch={this.fetchQuestions} /> : <QuestionsList questions={this.state.questions} handleClick={this.loadMoreQuestions} fetch={this.fetchQuestions} />}
 
       </div>
 
